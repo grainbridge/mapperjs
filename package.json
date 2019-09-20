@@ -1,0 +1,31 @@
+{
+  "name": "mapper",
+  "version": "1.0.0",
+  "description": "A simple JavaScript object mapper. That's it!",
+  "main": "mapper.js",
+  "scripts": {
+    "test": "jest -c ./tests/jest.config.js",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grainbridge/mapper.git"
+  },
+  "keywords": [
+    "mapper",
+    "mapping",
+    "javascript",
+    "map"
+  ],
+  "author": "@grainbridge.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grainbridge/mapper/issues"
+  },
+  "homepage": "https://github.com/grainbridge/mapper#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "eslint": "^6.4.0",
+    "jest": "^24.9.0"
+  }
+}
