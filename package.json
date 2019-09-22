@@ -1,5 +1,5 @@
 {
-  "name": "mapperjs",
+  "name": "@grainbridge/mapperjs",
   "version": "1.0.0",
   "description": "A simple JavaScript object mapper. That's it!",
   "main": "src/mapper.js",
