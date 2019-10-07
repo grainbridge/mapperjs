@@ -3,14 +3,14 @@ module.exports = class Mapper {
   /**
    * @constructor
    * @param {Mapper} [mapper] an optional Mapper object to extend
-   */  
+   */
   constructor(mapper) {
     if (!mapper)
       this.rules = {};
     else
       this.rules = Object.assign({}, mapper.rules);
   }
-  
+
   /**
      * A fluent mapping function used to register  each mapping.
      * @param {String|String[]} to 
@@ -24,7 +24,7 @@ module.exports = class Mapper {
       to.forEach(t => this.map(t), this);
     return this;
   }
-  
+
   /**
      * Perform the mapping on the specified object.
      * @param {Object} obj the object to be mapped
@@ -53,10 +53,10 @@ module.exports = class Mapper {
               output[to] = res;
           }
         } else if (typeof from === "function") {
-          let val = from(obj);
+          let val = from(obj, output);
           if (val !== undefined && val !== null)
             output[to] = val;
-        } else if(typeof from === "object") {
+        } else if (typeof from === "object") {
           output[to] = from;
         }
       });
@@ -64,4 +64,3 @@ module.exports = class Mapper {
     return output;
   }
 };
-  
