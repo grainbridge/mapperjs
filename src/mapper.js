@@ -40,7 +40,10 @@ module.exports = class Mapper {
             output[to] = obj[from];
         }
         else if (typeof from == "object" && from.mapper instanceof Mapper) {
-          if (from.isArray && obj[from.key]) {
+          if (!obj[from.key] && from.isRequired)
+            throw new Error(from.isRequired);
+
+          if (from.isArray) {
             if (Array.isArray(obj[from.key])) {
               let arr = obj[from.key].map(from.mapper.convert, from.mapper);
               if (arr && arr.length)

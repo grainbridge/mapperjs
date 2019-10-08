@@ -60,15 +60,49 @@ describe("The mapper", () => {
         fn: "FN",
         ln: "LN"
       };
-      mapper
+      functionMapper
         .map("id")
         .map("fn", "firstName")
         .map("ln", "lastName")
         .map("fullName", (i, n) => `${i.id} - ${n.fn} ${n.ln}`);
 
-      let result = mapper.convert(functionSourceObj);
+      let result = functionMapper.convert(functionSourceObj);
 
       expect(result).toEqual(obj);
+    });
+
+  });
+
+  describe("The mapper validation", () => {
+
+    let validationMapper = new Mapper();
+
+    beforeEach(() => {
+      validationMapper = new Mapper();
+    });
+
+    test("throw exception for when isRequired property is missing", () => {
+
+      let obj = {
+        prop1: 10
+      };
+      validationMapper
+        .map("prop1")
+        .map("fn", {
+          key: "req",
+          isRequired: "the property req is required",
+          mapper: new Mapper().map(["id", "name"])
+        });
+
+      let msg = "";
+      try {
+        validationMapper.convert(obj);
+      }
+      catch (e) {
+        msg = e.message;
+      }
+
+      expect(msg).toEqual("the property req is required");
     });
 
   });
