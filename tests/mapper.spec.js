@@ -106,4 +106,31 @@ describe("The mapper", () => {
     });
 
   });
+
+  describe("Test generateEmpty flag", () => {
+
+    let validationMapper = new Mapper();
+
+    beforeEach(() => {
+      validationMapper = new Mapper();
+    });
+
+    test("generateEmpty true maps empty array", () => {
+
+      let obj = {
+        prop1: []
+      };
+      validationMapper
+        .map("prop1", {
+          key: "prop1",
+          isArray: true,
+          generateEmpty: true,
+          mapper: new Mapper().map(["array_prop"])
+        });
+
+      let result = validationMapper.convert(obj);
+      expect(result).toStrictEqual({prop1: []});
+    });
+
+  });
 });
