@@ -46,7 +46,7 @@ module.exports = class Mapper {
           if (from.isArray) {
             if (Array.isArray(obj[from.key])) {
               let arr = obj[from.key].map(from.mapper.convert, from.mapper);
-              if (arr && arr.length)
+              if ((arr && arr.length) || from.generateEmpty)
                 output[to] = arr;
             }
           }
