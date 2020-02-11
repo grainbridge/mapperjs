@@ -133,4 +133,17 @@ describe("The mapper", () => {
     });
 
   });
+
+  test("should not map properties that are empty strings", () => {
+    const input = {
+      id: "my_id",
+      name: ""
+    };
+    mapper.map("id").map("name");
+
+    let result = mapper.convert(input);
+
+    expect(result.id).toBe("my_id");
+    expect(result.name).toBeUndefined();
+  });
 });

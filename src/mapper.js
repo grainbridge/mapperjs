@@ -36,7 +36,7 @@ module.exports = class Mapper {
       Object.keys(this.rules).forEach((to) => {
         let from = this.rules[to];
         if (typeof from === "string") {
-          if (obj[from] !== undefined && obj[from] !== null)
+          if (obj[from] !== undefined && obj[from] !== null && obj[from] !== "")
             output[to] = obj[from];
         }
         else if (typeof from == "object" && from.mapper instanceof Mapper) {
