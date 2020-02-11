@@ -38,8 +38,7 @@ module.exports = class Mapper {
         if (typeof from === "string") {
           if (obj[from] !== undefined && obj[from] !== null && obj[from] !== "")
             output[to] = obj[from];
-        }
-        else if (typeof from == "object" && from.mapper instanceof Mapper) {
+        } else if (typeof from == "object" && from.mapper instanceof Mapper) {
           if (!obj[from.key] && from.isRequired)
             throw new Error(from.isRequired);
 
