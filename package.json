@@ -1,6 +1,6 @@
 {
   "name": "@grainbridge/mapperjs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple JavaScript object mapper. That's it!",
   "main": "src/mapper.js",
   "scripts": {
@@ -24,9 +24,10 @@
     "url": "https://github.com/grainbridge/mapperjs/issues"
   },
   "homepage": "https://github.com/grainbridge/mapperjs#readme",
-  "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "eslint": "^6.4.0",
-    "jest": "^24.9.0"
+  "devDependencies": {},
+  "dependencies": {
+    "@types/jest": "^25.1.4",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
   }
 }
