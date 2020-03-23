@@ -4,7 +4,7 @@
   "description": "A simple JavaScript object mapper. That's it!",
   "main": "src/mapper.js",
   "scripts": {
-    "test": "jest -c ./tests/jest.config.js",
+    "test": "cd tests && npm test",
     "lint": "eslint ."
   },
   "repository": {
@@ -24,10 +24,5 @@
     "url": "https://github.com/grainbridge/mapperjs/issues"
   },
   "homepage": "https://github.com/grainbridge/mapperjs#readme",
-  "devDependencies": {
-    "jest": "^25.1.0",
-    "@types/jest": "^25.1.4",
-    "eslint": "^6.8.0"
-  },
   "dependencies": {}
 }
